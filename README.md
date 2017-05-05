@@ -22,7 +22,7 @@
 - [ ] Angus: Consult with Francesco about software dev
 - [ ] Team: Complete Quadrant 1
 
-### Week 2 Checklist (To be added to next week)
+### Week 3 Checklist (To be added to next week)
 - [ ] Emma: organise all documented components for the AVC report
 - [ ] Software Devs: IR sensor code underway
 - [ ] Team: Have robot complete quadrant 2 successfully 
