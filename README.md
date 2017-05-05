@@ -13,6 +13,7 @@
 - [ ] Jasper: Start printing components
 - [ ] Jasper: Consult with Orion about what parts need to be fabricated 
 - [ ] Orion: Begin Assembly of chassis
+- [ ] Orion: Consult with devs about which parts and sensors are needed
 - [ ] Francesco: Consult with other devs about who's coding what
 - [ ] Francesco: Camera line follwoing code
 - [ ] Emma: help write and implement software
@@ -20,6 +21,12 @@
 - [ ] Angus: Research implenmation of PID control, 
 - [ ] Angus: Consult with Francesco about software dev
 - [ ] Team: Complete Quadrant 1
+
+### Week 2 Checklist (To be added to next week)
+- [ ] Emma: organise all documented components for the AVC report
+- [ ] Software Devs: IR sensor code underway
+- [ ] Team: Have robot complete quadrant 2 successfully 
+
 
 
 
