@@ -8,7 +8,7 @@
 - [ ] Emma: make a list of  code needed for the AVC 
 - [X] Angus: Setup Github, get it running and manage it.
 - [ ] Team:  Complete and Submit  AVC plan
-- [ ] Team: Find Tim
+- [ ] Team: Find Tim (oh Tim where art thou Tim?!)
 
 ### Week 2 Checklist
 - [ ] Jasper: Start printing components
