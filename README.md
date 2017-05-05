@@ -3,6 +3,7 @@
 - [ ] Jasper: Learn CAD
 - [ ] Jasper: Model marble holders ready for printing 
 - [ ] Orion: Plan physical design of chassis
+- [ ] Orion: Challenges and solutions document
 - [X] Francesco: Get started on camera code
 - [ ] Emma: make a list of  code needed for the AVC 
 - [X] Angus: Setup Github, get it running and manage it.
