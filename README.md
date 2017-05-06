@@ -1,7 +1,7 @@
 # AVC - COMRADES - Team 7
 ### Week 1 Checklist
-- [ ] Jasper: Learn CAD
-- [ ] Jasper: Model marble holders ready for printing 
+- [X] Jasper: Learn CAD
+- [ ] Jasper: Model marble holders ready for printing  - *Need final measurements*
 - [ ] Orion: Plan physical design of chassis
 - [ ] Orion: Challenges and solutions document
 - [X] Francesco: Get started on camera code
