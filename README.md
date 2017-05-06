@@ -7,7 +7,7 @@
 - [X] Francesco: Get started on camera code
 - [ ] Emma: make a list of  code needed for the AVC 
 - [X] Angus: Setup Github, get it running and manage it.
-- [ ] Team:  Complete and Submit  AVC plan
+- [X] Team:  Complete and Submit  AVC plan
 - [ ] Team: Find Tim (oh Tim where art thou Tim?!)
 
 ### Week 2 Checklist
