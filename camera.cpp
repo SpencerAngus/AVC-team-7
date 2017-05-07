@@ -12,22 +12,21 @@ int checkPicture(){//this function returns which direction (if any) to turn the 
 	for(int i=1;i<columns+1;i+=4){//image is 360x240
 		for(int j=1;j<rows+1;j+=4){// check every 4 pixels
 			int pos [2] = {i, j};// X & Y
-			int random_color =  1 + (rand() % (int)(255 - 1 + 1));
-			if(i < 180){
+			int random_color =  1 + (rand() % (int)(255 - 1 + 1)); // this just replaces the get_pixel() function for debugging.
+			if(i < 180){ //first half of image (left hand side
 				if(random_color > (255/2)){
-					pictureSum_left++; //1 is white
+					pictureSum_left++; //add a white pixel
 				}
 			}
-			else{
-				if(random_color > (255/2)){
-					pictureSum_right++;
+			else{ //right hand side
+				if(random_color > (255/2)){ // current threshold, if color of pixel is 127 or more then its white, can be adjusted. 
+					pictureSum_right++; //add a white pixel
 				}
 			}
-			counter ++;
 		}
 	}
-	int difference = pictureSum_left - pictureSum_right;
-	if(pictureSum_left > pictureSum_right){ 
+	int difference = pictureSum_left - pictureSum_right; //we can use this difference to calculate how many degrees we need the robot to turn.
+	if(pictureSum_left > pictureSum_right){ //more white pixels on the left hand side than the right hand side
 		return 1;
 	}
 	else{
@@ -41,18 +40,15 @@ int adjustTrajectory(int direction, int degrees){
 }
 int main (){
 	init();
-	int x = 0;
-	while(x < 40){
+	while(true){
 		int white = checkPicture();
-		if(white){
-			printf("turn left");
+		if(white){ //if white == 1 then left hand side
+			printf("turn left"); //can be changed to have a 50+- tollerance because the line will never be exactly centered.
 		}
-		else{
+		else{ //right hand side
 			printf("turn right");
 		}
-		usleep(25000);
-		x++;
+		usleep(25000); //this will change to sleep1(); once we run this on the raspberrypi, this makes it so we preform this action 40 times a second.
 	}
-	printf("finish");
 	return 0;
 }
