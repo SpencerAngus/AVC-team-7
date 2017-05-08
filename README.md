@@ -1,7 +1,7 @@
 # AVC - COMRADES - Team 7
 ### Week 1 Checklist
 - [X] Jasper: Learn CAD
-- [ ] Jasper: Model marble holders ready for printing  - *Need final measurements*
+- [X] Jasper: Model marble holders ready for printing  - *Need final measurements*
 - [ ] Orion: Plan physical design of chassis
 - [ ] Orion: Challenges and solutions document
 - [X] Francesco: Get started on camera code
@@ -19,7 +19,7 @@
 - [ ] Francesco: Camera line follwoing code
 - [ ] Emma: help write and implement software
 - [ ] Emma Documentaion
-- [ ] Angus: Research implenmation of PID control, 
+- [ ] Angus: Research implemenation of PID control, 
 - [ ] Angus: Consult with Francesco about software dev
 - [ ] Team: Complete Quadrant 1
 
