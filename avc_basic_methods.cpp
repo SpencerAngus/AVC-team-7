@@ -62,7 +62,7 @@ return 0;}
 
 int forward(){
 	
-	set_motor(1,255);
+	set_motor(1,-255);
 	sleep1(0,010000);//sleep may not be needed/wanted
 	set_motor(2,255);
 	sleep1(0,010000);
@@ -71,7 +71,7 @@ return 0;}
 
 int slowReverse(){
 	
-	set_motor(1,-100);
+	set_motor(1,100);
 	sleep1(0,010000); //sleep may not be needed/wanted
 	set_motor(2,-100);
 	sleep1(0,010000);
