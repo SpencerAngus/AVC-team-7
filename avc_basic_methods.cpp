@@ -5,15 +5,16 @@
 //Basic methods to control the vehicle in the AVC
 
 int adc_mean();
-int turn_left();
-int turn_right();
-int foward();
+int turn_left(double turnTime);
+int turn_right(double turnTime);
+int forward();
+int ifWall();
 int slowReverse();
 
 int main(){
 	//This sets up the RPi hardware and ensures everything is working correctly
 	init();
-	printf("ADC Mean: %d /n", adc_mean();
+	printf("ADC Mean: %d /n", adc_mean());
 	turn_left(0.5);
 	turn_right(0.5);
 	forward();
@@ -71,7 +72,7 @@ return 0;}
 int slowReverse(){
 	
 	set_motor(1,-100);
-	sleep1(0,010000);//sleep may not be needed/wanted
+	sleep1(0,010000); //sleep may not be needed/wanted
 	set_motor(2,-100);
 	sleep1(0,010000);
 	
