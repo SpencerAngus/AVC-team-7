@@ -24,6 +24,9 @@
 - [ ] Team: Complete Quadrant following line (2)
 - [x] Emma: code for Gate opening
 - [ ] Team: implement and complete quadrant 1 (Gate Opening)
+- [ ] commit updated code
+- [x] Jasper: implement ssh
+- [x] Team: team meetup tues,wed,fri
 
 ### Week 3 Checklist (To be added to next week)
 - [ ] Emma: organise all documented components for the AVC report
@@ -32,8 +35,12 @@
 - [ ] Software dev: consult on how to code quadrant 3 
 - [ ] Francesco: look over developed quadrant 3 code
 - [ ] Team: Complete majority of quadrant 3 
-- [ ] finalise physical design of raspberry Pi
-
+- [ ] hardware team: finalise physical design of raspberry Pi
+- [ ] software team: commit updated code
+- [ ] Emma: update google doc 
+- [ ] make the following line code more accurate
+- [ ] Team: team meetup tues,wed,fri
+- [ ] write up integral part of PID
 
 
 
