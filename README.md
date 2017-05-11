@@ -40,7 +40,8 @@
 - [ ] Emma: update google doc 
 - [ ] make the following line code more accurate
 - [ ] Team: team meetup tues,wed,fri
-- [ ] write up integral part of PID
+- [ ] write up derivative part of PID
+- [ ] research implementation of integral part of PID
 
 
 
