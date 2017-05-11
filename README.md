@@ -11,22 +11,28 @@
 - [ ] Team: Find Tim (oh Tim where art thou Tim?!)
 
 ### Week 2 Checklist
-- [ ] Jasper: Start printing components
-- [ ] Jasper: Consult with Orion about what parts need to be fabricated 
-- [ ] Orion: Begin Assembly of chassis
+- [x] Jasper: Start printing components
+- [x] Jasper: Consult with team about what parts need to be fabricated 
+- [x] Team: Begin Assembly of chassis
 - [ ] Orion: Consult with devs about which parts and sensors are needed
 - [ ] Francesco: Consult with other devs about who's coding what
-- [ ] Francesco: Camera line follwoing code
-- [ ] Emma: help write and implement software
+- [x] Francesco: Camera line follwoing code
+- [x] Emma: help write and implement software
 - [ ] Emma Documentaion
 - [ ] Angus: Research implemenation of PID control, 
 - [ ] Angus: Consult with Francesco about software dev
-- [ ] Team: Complete Quadrant 1
+- [ ] Team: Complete Quadrant following line (2)
+- [x] Emma: code for Gate opening
+- [ ] Team: implement and complete quadrant 1 (Gate Opening)
 
 ### Week 3 Checklist (To be added to next week)
 - [ ] Emma: organise all documented components for the AVC report
 - [ ] Software Devs: IR sensor code underway
 - [ ] Team: Have robot complete quadrant 2 successfully 
+- [ ] Software dev: consult on how to code quadrant 3 
+- [ ] Francesco: look over developed quadrant 3 code
+- [ ] Team: Complete majority of quadrant 3 
+- [ ] finalise physical design of raspberry Pi
 
 
 
