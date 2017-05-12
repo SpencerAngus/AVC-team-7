@@ -1,17 +1,17 @@
-//main avc program
+\//main avc program
 
 #include <stdio.h>
 #include "E101.h"
 
 int frameRate = 40;
-int initSpeed = 50;
+int initSpeed = 30;
 
 const int MLEFT = 2;
-const int MLEFT = 1; 
+const int MRIGHT = 1; 
 
 int back_track(){
-	set_motor(MLEFT, speed_left);
-	set_motor(MRIGHT, speed_right);
+	set_motor(MLEFT, initSpeed);
+	set_motor(MRIGHT, initSpeed);
 	return 0;
 }
 
@@ -24,14 +24,14 @@ int doLine(){
 	int threshold_var = 100; //can be adjusted
 	
 	int pSignal = 0; //proportinal signal, scaled by kP (P for Proportional in PID)
-	float kp = 0.1; //for tuning pSignal
+	float kp = 0.05; //for tuning pSignal
 	
-	int v_left
-	int v_right
+	int v_left;
+	int v_right;
 	take_picture(); //take picture and store in memory
 	
 	for(int i=0;i<test_points;i++){ 
-		pix = get_pixel(120, i*(320/test_points, 3); //save pixel color
+		pix = get_pixel(120, i*(320/test_points), 3); //save pixel color
 		//printf("%i ", i);
 		if(pix>threshold_var){
 			white[i] = 1; //round color
@@ -42,16 +42,18 @@ int doLine(){
 			white[i] = 0; //round color
 			//printf("0");
 		} 
-		err = err + (i - test_points/2)*w; //total err signal
-		printf("Err: %i",err);
+		err = err + (i - test_points/2)*white[i]; //total err signal
 	}
+	printf("Err: %i\n",err);
+
 	pSignal = (int)((double)err*kp); //error signal is tuned to suit velocity
-				
-	v_left = initSpeed + pSignal;
-	v_right	= initSpeed - 
-				
-	//set_motor(2, v_left);
-	//set_motor(1, v_right);
+	printf("pSignal: %i\n",pSignal);
+
+	v_left = initSpeed - pSignal;
+	v_right	= initSpeed + pSignal;
+	
+	set_motor(2, v_left);
+	set_motor(1, v_right);
 	
 	return 0;
 }
@@ -59,7 +61,7 @@ int doLine(){
 int main (){
 	init(); //initialiase hardware
 	set_motor(MRIGHT,initSpeed);
-	set_motor(MRIGHT,initSpeed);
+	set_motor(MLEFT,initSpeed);
 	while(true){ //infinite loop
 		doLine(); //executes line following method
 		sleep1(0,1000000/frameRate); //|testing| adjust this to adjust framerate
