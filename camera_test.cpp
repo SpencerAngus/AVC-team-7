@@ -1,3 +1,5 @@
+//main camera method, follows line
+
 #include <stdio.h>
 #include "E101.h"
 int adjust_trajectory(int err){
