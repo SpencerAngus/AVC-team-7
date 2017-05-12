@@ -1,3 +1,5 @@
+//similar code to camera_test, but prints ASCII version of line instead of moving motors
+
 #include <stdio.h>
 #include <time.h>
 #include "E101.h"
