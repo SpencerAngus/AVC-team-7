@@ -24,7 +24,7 @@
 - [ ] Team: Complete Quadrant following line (2)
 - [x] Emma: code for Gate opening
 - [ ] Team: implement and complete quadrant 1 (Gate Opening)
-- [ ] commit updated code
+- [x] commit updated code
 - [x] Jasper: implement ssh
 - [x] Team: team meetup tues,wed,fri
 
