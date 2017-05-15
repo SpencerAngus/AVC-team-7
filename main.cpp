@@ -2,6 +2,20 @@
 
 #include <stdio.h>
 #include "E101.h"
+	
+
+
+int doGate() {
+	char server_ip[] = "130.195.6.196";
+	int server_port = 1024;
+	char server_password[] = "Please";
+
+	connect_to_server(server_ip, server_port);
+	send_to_server(server_password);
+	char message[24];
+	receive_from_server(message);
+	send_to_server(message);
+}
 
 int frameRate = 40;
 int initSpeed = 30;
@@ -60,11 +74,12 @@ int doLine(){
 
 int main (){
 	init(); //initialiase hardware
-	set_motor(MRIGHT,initSpeed);
-	set_motor(MLEFT,initSpeed);
-	while(true){ //infinite loop
-		doLine(); //executes line following method
-		sleep1(0,1000000/frameRate); //|testing| adjust this to adjust framerate
-	}
+	doGate();
+	//set_motor(MRIGHT,initSpeed);
+	//set_motor(MLEFT,initSpeed);
+	//while(true){ //infinite loop
+	//	doLine(); //executes line following method
+	//	sleep1(0,1000000/frameRate); //|testing| adjust this to adjust framerate
+	//}
 	return 0;
 }
