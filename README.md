@@ -2,7 +2,7 @@
 ### Week 1 Checklist
 - [X] Jasper: Learn CAD
 - [X] Jasper: Model marble holders ready for printing  - *Need final measurements*
-- [ ] Orion: Plan physical design of chassis
+- [x] Orion: Plan physical design of chassis
 - [ ] Orion: Challenges and solutions document
 - [X] Francesco: Get started on camera code
 - [x] Emma: make a list of  code needed for the AVC 
@@ -14,23 +14,23 @@
 - [x] Jasper: Start printing components
 - [x] Jasper: Consult with team about what parts need to be fabricated 
 - [x] Team: Begin Assembly of chassis
-- [ ] Orion: Consult with devs about which parts and sensors are needed
-- [ ] Francesco: Consult with other devs about who's coding what
+- [x] Orion: Consult with devs about which parts and sensors are needed
+- [x] Francesco: Consult with other devs about who's coding what
 - [x] Francesco: Camera line follwoing code
 - [x] Emma: help write and implement software
-- [ ] Emma Documentaion
-- [ ] Angus: Research implemenation of PID control, 
-- [ ] Angus: Consult with Francesco about software dev
-- [ ] Team: Complete Quadrant following line (2)
+- [x] Emma Documentaion
+- [x] Angus: Research implemenation of PID control, 
+- [x] Angus: Consult with Francesco about software dev
+- [x] Team: Complete Quadrant following line (2)
 - [x] Emma: code for Gate opening
-- [ ] Team: implement and complete quadrant 1 (Gate Opening)
+- [x] Team: implement and complete quadrant 1 (Gate Opening)
 - [x] commit updated code
 - [x] Jasper: implement ssh
 - [x] Team: team meetup tues,wed,fri
 
-### Week 3 Checklist (To be added to next week)
+### Week 3 Checklist
 - [ ] Emma: organise all documented components for the AVC report
-- [ ] Software Devs: IR sensor code underway
+- [ ] Software Devs: think about IR sensor code
 - [ ] Team: Have robot complete quadrant 2 successfully 
 - [ ] Software dev: consult on how to code quadrant 3 
 - [ ] Francesco: look over developed quadrant 3 code
@@ -42,6 +42,20 @@
 - [ ] Team: team meetup tues,wed,fri
 - [ ] write up derivative part of PID
 - [ ] research implementation of integral part of PID
+- [ ] Team: desing, build, attatch camera properly
+- [ ] Team: design, build, attatch battery holder
+
+### Week 4 Checklist (To be added to next week)
+- [ ] Emma:
+- [ ] Francesco:
+- [ ] Orion
+- [ ] Jasper:
+- [ ] Team: hand in Progress report
+- [ ] Team: Successfully complete quadrant 3; 
+- [ ] Team: commit updated main code to rasp Pi 
+- [ ] Orion: attatch IR sensors
+- [ ] : attempt quadrant 4
+- [ ] Team: have majprity of final design done
 
 
 
