@@ -67,9 +67,9 @@ int doLine(){
 	v_right	= initSpeed + pSignal;
 	if(nwp > 55){
 		//intersection found, backtrack and turn left
-		set_motor(MRIGHT,0);
-		set_motor(MLEFT,initSpeed);
-		sleep1(0,200000);
+		set_motor(MRIGHT,initSpeed);
+		set_motor(MLEFT,-initSpeed);
+		sleep1(0,250000);//1/4 seconds
 	}
 	else if(nwp <= 2){
 		back_track();
