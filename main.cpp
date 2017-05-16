@@ -70,6 +70,9 @@ int doLine(){
 		set_motor(MRIGHT,0);
 		set_motor(MLEFT,initSpeed); 
 	}
+	else if(nwp <= 2){
+		back_track();
+	}
 	else{
 		set_motor(MLEFT, v_left);
 		set_motor(MRIGHT, v_right);
