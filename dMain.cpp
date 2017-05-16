@@ -32,8 +32,8 @@ int doLine(){
 	int test_points = 64; //can be adjusted
 	char white [64]; //holds pixel's rounded color (0=black and 1=white) and location
 	char white1 [64]; //holds pixel's rounded color (0=black and 1=white) and location
-	int err_1 = 0; //error | how offcentered the robot is (-ve for left +ve for right and 0 is centered)
-	int err_2 = 0; //error | how offcentered the robot is (-ve for left +ve for right and 0 is centered)
+	float err_1 = 0; //error | how offcentered the robot is (-ve for left +ve for right and 0 is centered)
+	float err_2 = 0; //error | how offcentered the robot is (-ve for left +ve for right and 0 is centered)
 	int nwp = 0; //number of white pixels detected
 	int threshold_var = 100; //can be adjusted
 	int derivpixel=30; //pixel difference verticaly for the deriviate calculation.
@@ -80,9 +80,9 @@ int doLine(){
 	printf("Err: %i\n",err_1);
 	printf("Change in Err: %i\n",(err_2-err_1));
 
-	pSignal = (int)((double)err_1*kp);//error signal is tuned to suit velocity
+	pSignal = (int)(err_1*kp);//error signal is tuned to suit velocity
 	dSignal = (((err_2-err_1)/DeltaT)*kd);//error signal is tuned so no ocilations
-	Signal = pSignal+dSignal;
+	Signal = pSignal-dSignal;
 	printf("pSignal: %i\n",pSignal);
 	printf("dSignal: %i\n",dSignal);
 	printf("Overall Signal: %i\n",Signal);
