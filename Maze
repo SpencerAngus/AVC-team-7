@@ -18,7 +18,7 @@
 
 //  6. At a rotated T intersection (where there is a opening to the front and either the left or right side) the robot should continue going straight rather than turn.
 
-//while (in quadrant 4) {
+//while (in quadrant 4- detect colour red) {
 //  frontReading = get reading from front facing IR sensor
 //  leftReading = get reading from left hand IR sensor
 //  rightReading = get reading from right hand IR sensor
