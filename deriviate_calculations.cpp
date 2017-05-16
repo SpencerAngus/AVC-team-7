@@ -2,12 +2,6 @@
 #include "E101.h"
 
 
-int frameRate = 40;
-int initSpeed = 30;
-
-const int MLEFT = 2;
-const int MRIGHT = 1; 
-
 int doGate() {
 	char server_ip[] = "130.195.6.196";
 	int server_port = 1024;
@@ -19,6 +13,13 @@ int doGate() {
 	receive_from_server(message);
 	send_to_server(message);
 }
+
+
+int frameRate = 40;
+int initSpeed = 40;
+
+const int MLEFT = 2;
+const int MRIGHT = 1; 
 
 int back_track(){
 	set_motor(MLEFT, initSpeed);
@@ -39,8 +40,8 @@ int doLine(){
 	float DeltaT=1/frameRate; //change in time for derivative calculation
 	
 	int pSignal = 0; //proportinal signal, scaled by kP (P for Proportional in PID)
-	float kp = 0.05; //for tuning pSignal
-	float kd = 0; //deriviative multiplier NEEDS CALBRATING
+	float kp = 0.20; //for tuning pSignal
+	float kd = 0.10; //deriviative multiplier NEEDS CALBRATING
 	
 	int v_left;
 	int v_right;
@@ -79,18 +80,32 @@ int doLine(){
 
 	pSignal = (int)((double)err_1*kp)+(((err_1/err_2)/DeltaT)*kd); //error signal is tuned to suit velocity
 	printf("pSignal: %i\n",pSignal);
+	printf("nwp = %i\n",nwp);
 
 	v_left = initSpeed - pSignal;
 	v_right	= initSpeed + pSignal;
 	
-	set_motor(2, v_left);
-	set_motor(1, v_right);
+	if(nwp > 55){
+		//intersection found, backtrack and turn left
+		set_motor(MRIGHT,initSpeed);
+		set_motor(MLEFT,-initSpeed);
+		sleep1(0,250000);//1/4 seconds
+	}
+	else if(nwp <= 2){
+		back_track();
+		sleep1(0,200000);
+	}
+	else{
+		set_motor(MLEFT, v_left);
+		set_motor(MRIGHT, v_right);
+	}
 	
 	return 0;
 }
 
 int main (){
 	init(); //initialiase hardware
+	doGate();
 	set_motor(MRIGHT,initSpeed);
 	set_motor(MLEFT,initSpeed);
 	while(true){ //infinite loop
