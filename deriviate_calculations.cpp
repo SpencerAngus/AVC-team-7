@@ -1,11 +1,24 @@
 #include <stdio.h>
 #include "E101.h"
 
+
 int frameRate = 40;
 int initSpeed = 30;
 
 const int MLEFT = 2;
 const int MRIGHT = 1; 
+
+int doGate() {
+	char server_ip[] = "130.195.6.196";
+	int server_port = 1024;
+	char server_password[] = "Please";
+
+	connect_to_server(server_ip, server_port);
+	send_to_server(server_password);
+	char message[24];
+	receive_from_server(message);
+	send_to_server(message);
+}
 
 int back_track(){
 	set_motor(MLEFT, initSpeed);
