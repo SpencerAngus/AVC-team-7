@@ -1,4 +1,4 @@
-\//main avc program
+//main avc program
 
 #include <stdio.h>
 #include "E101.h"
@@ -18,7 +18,7 @@ int doGate() {
 }
 
 int frameRate = 40;
-int initSpeed = 30;
+int initSpeed = 40;
 
 const int MLEFT = 2;
 const int MRIGHT = 1; 
@@ -38,7 +38,7 @@ int doLine(){
 	int threshold_var = 100; //can be adjusted
 	
 	int pSignal = 0; //proportinal signal, scaled by kP (P for Proportional in PID)
-	float kp = 0.05; //for tuning pSignal
+	float kp = 0.07; //for tuning pSignal
 	
 	int v_left;
 	int v_right;
