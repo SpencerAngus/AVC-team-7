@@ -68,7 +68,7 @@ int doLine(){
 		//printf("%i ", i);
 		if(pix>threshold_var){
 			white1[i] = 1; //round color
-			nwp++;
+			
 			//printf("1");
 		}
 		else{
