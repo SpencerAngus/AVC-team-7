@@ -58,11 +58,11 @@ int doLine(){
 		} 
 		err = err + (i - test_points/2)*white[i]; //total err signal
 	}
-	printf("Err: %i\n",err);
+	//printf("Err: %i\n",err);
 
 	pSignal = (int)((double)err*kp); //error signal is tuned to suit velocity
-	printf("pSignal: %i\n",pSignal);
-
+	//printf("pSignal: %i\n",pSignal);
+	printf("nwp = %i\n",nwp);
 	v_left = initSpeed - pSignal;
 	v_right	= initSpeed + pSignal;
 	if(nwp > 55){
