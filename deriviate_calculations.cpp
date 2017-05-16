@@ -40,8 +40,8 @@ int doLine(){
 	float DeltaT=1/frameRate; //change in time for derivative calculation
 	
 	int pSignal = 0; //proportinal signal, scaled by kP (P for Proportional in PID)
-	float kp = 0.20; //for tuning pSignal
-	float kd = 0.10; //deriviative multiplier NEEDS CALBRATING
+	float kp = 0.07; //for tuning pSignal
+	float kd = 0.0; //deriviative multiplier NEEDS CALBRATING
 	
 	int v_left;
 	int v_right;
