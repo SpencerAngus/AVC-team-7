@@ -12,8 +12,8 @@ int doGate() {
 	char message[24];
 	receive_from_server(message);
 	send_to_server(message);
+	return 0;
 }
-
 
 int frameRate = 40;
 int initSpeed = 40;
@@ -39,6 +39,8 @@ int doLine(){
 	int derivpixel=30; //pixel difference verticaly for the deriviate calculation.
 	float DeltaT=1/frameRate; //change in time for derivative calculation
 	
+	int Signal = 0;//overall signal
+	int dSignal = 0; //derivitive signal, scaled by kd
 	int pSignal = 0; //proportinal signal, scaled by kP (P for Proportional in PID)
 	float kp = 0.07; //for tuning pSignal
 	float kd = 0.0; //deriviative multiplier NEEDS CALBRATING
@@ -76,10 +78,14 @@ int doLine(){
 		err_2 = err_2 + (i - test_points/2)*white1[i];//total err signal for second loop
 	}
 	printf("Err: %i\n",err_1);
-	printf("Change in Err: %i\n",(err_1/err_2));
+	printf("Change in Err: %i\n",(err_2-err_1));
 
-	pSignal = (int)((double)err_1*kp)+(((err_1/err_2)/DeltaT)*kd); //error signal is tuned to suit velocity
+	pSignal = (int)((double)err_1*kp);//error signal is tuned to suit velocity
+	dSignal = (((err_2-err_1)/DeltaT)*kd);//error signal is tuned so no ocilations
+	Signal = pSignal+dSignal;
 	printf("pSignal: %i\n",pSignal);
+	printf("dSignal: %i\n",dSignal);
+	printf("Overall Signal: %i\n",Signal);
 	printf("nwp = %i\n",nwp);
 
 	v_left = initSpeed - pSignal;
@@ -114,3 +120,4 @@ int main (){
 	}
 	return 0;
 }
+
