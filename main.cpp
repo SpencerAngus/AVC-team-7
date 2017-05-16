@@ -65,9 +65,15 @@ int doLine(){
 
 	v_left = initSpeed - pSignal;
 	v_right	= initSpeed + pSignal;
-	
-	set_motor(2, v_left);
-	set_motor(1, v_right);
+	if(nwp > 55){
+		//intersection found, backtrack and turn left
+		set_motor(MRIGHT,0);
+		set_motor(MLEFT,initSpeed); 
+	}
+	else{
+		set_motor(MLEFT, v_left);
+		set_motor(MRIGHT, v_right);
+	}
 	
 	return 0;
 }
@@ -75,11 +81,11 @@ int doLine(){
 int main (){
 	init(); //initialiase hardware
 	doGate();
-	//set_motor(MRIGHT,initSpeed);
-	//set_motor(MLEFT,initSpeed);
-	//while(true){ //infinite loop
-	//	doLine(); //executes line following method
-	//	sleep1(0,1000000/frameRate); //|testing| adjust this to adjust framerate
-	//}
+	set_motor(MRIGHT,initSpeed);
+	set_motor(MLEFT,initSpeed);
+	while(true){ //infinite loop
+		doLine(); //executes line following method
+		sleep1(0,1000000/frameRate); //|testing| adjust this to adjust framerate
+	}
 	return 0;
 }
