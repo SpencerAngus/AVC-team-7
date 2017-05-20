@@ -35,15 +35,15 @@
 - [x] Software dev: consult on how to code quadrant 3 
 - [ ] Francesco: look over developed quadrant 3 code
 - [ ] Team: Complete majority of quadrant 3 
-- [x] hardware team: finalise physical design of raspberry Pi *only ir sensor mounts needed*
+- [x] hardware team: finalise physical design of raspberry Pi - *only ir sensor mounts needed*
 - [ ] software team: commit updated code
 - [ ] Emma: update google doc 
-- [ ] make the following line code more accurate *moved to next week, camera mounting should have big effect*
+- [ ] make the following line code more accurate - *moved to next week, camera mounting should have big effect*
 - [x] Team: team meetup tues,wed,fri - *difficult to achieve due to overuse of C0145*
 - [x] write up derivative part of PID - *in progress*
 - [ ] ~~research implementation of integral part of PID~~ *not to be implemented*
 - [x] Team: desing, build, attatch camera properly
-- [x] Team: design, build, attatch battery holder *changed completely, using different battery so it slips into frame*
+- [x] Team: design, build, attatch battery holder - *changed completely, using different battery so it slips into frame*
 
 ### Week 4 Checklist (To be added to next week)
 - [ ] Emma: Maze code, go over gate code with Jasper (needs to be updated)
