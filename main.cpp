@@ -12,9 +12,9 @@ int doGate() {
 
 	connect_to_server(server_ip, server_port);
 	send_to_server(server_request);
-	char message[24];
-	receive_from_server(message);
-	send_to_server(message);
+	char password[24];
+	receive_from_server(password);
+	send_to_server(password);
 }
 
 int frameRate = 40;
