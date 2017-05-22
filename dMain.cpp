@@ -66,10 +66,10 @@ int doLine(){
 			nwp1++;
 		}
 	}
-	printf("Err: %f\n",err_1);
+	//printf("Err: %f\n",err_1);
 	pSignal = (int)(err_1*kp);//error signal is tuned to suit velocity
-	printf("pSignal: %i\n",pSignal);
-	printf("nwp = %i\n",nwp);
+	//printf("pSignal: %i\n",pSignal);
+	//printf("nwp = %i\n",nwp);
 
 	v_left = initSpeed - pSignal;
 	v_right	= initSpeed + pSignal;
@@ -81,6 +81,7 @@ int doLine(){
 			set_motor(MRIGHT,initSpeed);
 			set_motor(MLEFT,-initSpeed);
 			sleep1(0,250000);//1/4 seconds
+			printf("juction detected");
 		}
 		//otherwise go straight
 	}
