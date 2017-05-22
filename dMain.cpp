@@ -35,6 +35,7 @@ int doLine(){
 	float err_1 = 0; //error | how offcentered the robot is (-ve for left +ve for right and 0 is centered)
 	float err_2 = 0; //error | how offcentered the robot is (-ve for left +ve for right and 0 is centered)
 	int nwp = 0; //number of white pixels detected
+	int nwp1 = 0; //number of white pixels detected
 	int threshold_var = 100; //can be adjusted
 	int derivpixel=30; //pixel difference verticaly for the deriviate calculation.
 	float DeltaT=1/frameRate; //change in time for derivative calculation
@@ -48,7 +49,7 @@ int doLine(){
 	int v_left;
 	int v_right;
 	take_picture(); //take picture and store in memory
-	
+	//first line scan
 	for(int i=0;i<test_points;i++){ 
 		pix = get_pixel(120, i*(320/test_points), 3); //save pixel color
 		//printf("%i ", i);
@@ -61,25 +62,23 @@ int doLine(){
 			white[i] = 0; //round color
 			//printf("0");
 		}
-				err_1 = err_1 + (i - test_points/2)*white[i]; //total err signalf
-	} 
-		for(int i=0;i<test_points;i++){ 
+		err_1 = err_1 + (i - test_points/2)*white[i]; //total err signalf
+	}
+	// second line scan
+	for(int i=0;i<test_points;i++){ 
 		pix = get_pixel(120+derivpixel, i*(320/test_points), 3); //save pixel color
 		//printf("%i ", i);
 		if(pix>threshold_var){
 			white1[i] = 1; //round color
-			
-			//printf("1");
+			nwp1++;
 		}
 		else{
 			white1[i] = 0; //round color
-			//printf("0");
-		} 
+		}
 		err_2 = err_2 + (i - test_points/2)*white1[i];//total err signal for second loop
 	}
 	printf("Err: %i\n",err_1);
 	printf("Change in Err: %i\n",(err_2-err_1));
-
 	pSignal = (int)(err_1*kp);//error signal is tuned to suit velocity
 	dSignal = (((err_2-err_1)/DeltaT)*kd);//error signal is tuned so no ocilations
 	Signal = pSignal-dSignal;
@@ -91,17 +90,19 @@ int doLine(){
 	v_left = initSpeed - pSignal;
 	v_right	= initSpeed + pSignal;
 	
-	if(nwp > 55){
-		//intersection found, backtrack and turn left
-		set_motor(MRIGHT,initSpeed);
-		set_motor(MLEFT,-initSpeed);
-		sleep1(0,250000);//1/4 seconds
+	if(nwp > 55){//intersection found
+		if(nwp1 <= 2){// T-Junction, so turn left
+			set_motor(MRIGHT,initSpeed);
+			set_motor(MLEFT,-initSpeed);
+			sleep1(0,250000);//1/4 seconds
+		}
+		//otherwise go straight
 	}
-	else if(nwp <= 2){
+	else if(nwp <= 2){ // no road ahead, so backtrack
 		back_track();
 		sleep1(0,200000);
 	}
-	else{
+	else{ // follow line
 		set_motor(MLEFT, v_left);
 		set_motor(MRIGHT, v_right);
 	}
