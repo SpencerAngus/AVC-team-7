@@ -15,15 +15,15 @@ int doGate() {
 	return 0;
 }
 
-int frameRate = 40;
+int frameRate = 80;
 int initSpeed = 40;
 
 const int MLEFT = 2;
 const int MRIGHT = 1; 
 
 int back_track(){
-	set_motor(MLEFT, initSpeed);
-	set_motor(MRIGHT, initSpeed);
+	set_motor(MLEFT, -initSpeed);
+	set_motor(MRIGHT, -initSpeed);
 	return 0;
 }
 
@@ -100,11 +100,7 @@ int doLine(){
 	}
 	else if(nwp <= 2){ // no road ahead, so backtrack
 		back_track();
-		sleep1(0,200000);
-	}
-	else{ // follow line
-		set_motor(MLEFT, v_left);
-		set_motor(MRIGHT, v_right);
+		sleep1(0,050000);
 	}
 	
 	return 0;
