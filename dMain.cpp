@@ -5,13 +5,13 @@
 int doGate() {
 	char server_ip[] = "130.195.6.196";
 	int server_port = 1024;
-	char server_password[] = "Please";
+	char server_request[] = "Pozhaluysta - Please";
 
 	connect_to_server(server_ip, server_port);
-	send_to_server(server_password);
-	char message[24];
-	receive_from_server(message);
-	send_to_server(message);
+	send_to_server(server_request);
+	char password[24];
+	receive_from_server(password);
+	send_to_server(password);
 	return 0;
 }
 
