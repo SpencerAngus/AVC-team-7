@@ -16,7 +16,7 @@ int doGate() {
 }
 
 int frameRate = 80;
-int initSpeed = 40;
+int initSpeed = 50;
 
 const int MLEFT = 2;
 const int MRIGHT = 1; 
@@ -31,20 +31,14 @@ int doLine(){
 	char pix = 0; //holds pixel's color
 	int test_points = 64; //can be adjusted
 	char white [64]; //holds pixel's rounded color (0=black and 1=white) and location
-	char white1 [64]; //holds pixel's rounded color (0=black and 1=white) and location
 	float err_1 = 0; //error | how offcentered the robot is (-ve for left +ve for right and 0 is centered)
-	float err_2 = 0; //error | how offcentered the robot is (-ve for left +ve for right and 0 is centered)
 	int nwp = 0; //number of white pixels detected
 	int nwp1 = 0; //number of white pixels detected
 	int threshold_var = 100; //can be adjusted
 	int derivpixel=30; //pixel difference verticaly for the deriviate calculation.
-	float DeltaT=1/frameRate; //change in time for derivative calculation
 	
-	int Signal = 0;//overall signal
-	int dSignal = 0; //derivitive signal, scaled by kd
 	int pSignal = 0; //proportinal signal, scaled by kP (P for Proportional in PID)
 	float kp = 0.07; //for tuning pSignal
-	float kd = 0.0; //deriviative multiplier NEEDS CALBRATING
 	
 	int v_left;
 	int v_right;
@@ -69,26 +63,18 @@ int doLine(){
 		pix = get_pixel(120+derivpixel, i*(320/test_points), 3); //save pixel color
 		//printf("%i ", i);
 		if(pix>threshold_var){
-			white1[i] = 1; //round color
 			nwp1++;
 		}
-		else{
-			white1[i] = 0; //round color
-		}
-		err_2 = err_2 + (i - test_points/2)*white1[i];//total err signal for second loop
 	}
-	printf("Err: %i\n",err_1);
-	printf("Change in Err: %i\n",(err_2-err_1));
+	printf("Err: %f\n",err_1);
 	pSignal = (int)(err_1*kp);//error signal is tuned to suit velocity
-	dSignal = (((err_2-err_1)/DeltaT)*kd);//error signal is tuned so no ocilations
-	Signal = pSignal-dSignal;
 	printf("pSignal: %i\n",pSignal);
-	printf("dSignal: %i\n",dSignal);
-	printf("Overall Signal: %i\n",Signal);
 	printf("nwp = %i\n",nwp);
 
 	v_left = initSpeed - pSignal;
 	v_right	= initSpeed + pSignal;
+    set_motor(MRIGHT,v_right);
+    set_motor(MLEFT,v_left);
 	
 	if(nwp > 55){//intersection found
 		if(nwp1 <= 2){// T-Junction, so turn left
@@ -117,4 +103,3 @@ int main (){
 	}
 	return 0;
 }
-
