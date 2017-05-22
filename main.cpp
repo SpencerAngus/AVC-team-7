@@ -1,5 +1,4 @@
 //main avc program
-
 #include <stdio.h>
 #include "E101.h"
 	
@@ -58,28 +57,28 @@ int doLine(){
 		} 
 		err = err + (i - test_points/2)*white[i]; //total err signal
 	}
-	//printf("Err: %i\n",err);
-
+	
 	pSignal = (int)((double)err*kp); //error signal is tuned to suit velocity
 	//printf("pSignal: %i\n",pSignal);
 	printf("nwp = %i\n",nwp);
 	v_left = initSpeed - pSignal;
 	v_right	= initSpeed + pSignal;
 	if(nwp > 55){
-		//intersection found, backtrack and turn left
+		//intersection found, turn left
 		set_motor(MRIGHT,initSpeed);
 		set_motor(MLEFT,-initSpeed);
 		sleep1(0,250000);//1/4 seconds
 	}
-	else if(nwp <= 2){
+	else if(nwp <= 2){ //+- 2 error
+		//no path found, backtrack
 		back_track();
 		sleep1(0,200000);
 	}
 	else{
+		//follow line
 		set_motor(MLEFT, v_left);
 		set_motor(MRIGHT, v_right);
 	}
-	
 	return 0;
 }
 
@@ -90,7 +89,7 @@ int main (){
 	set_motor(MLEFT,initSpeed);
 	while(true){ //infinite loop
 		doLine(); //executes line following method
-		sleep1(0,1000000/frameRate); //|testing| adjust this to adjust framerate
+		sleep1(0,1000000/frameRate); //framerate
 	}
 	return 0;
 }
