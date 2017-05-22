@@ -22,6 +22,7 @@ const int MLEFT = 2;
 const int MRIGHT = 1; 
 
 int back_track(){
+	printf("reversing");
 	set_motor(MLEFT, -initSpeed);
 	set_motor(MRIGHT, -initSpeed);
 	return 0;
@@ -77,6 +78,9 @@ int doLine(){
     set_motor(MLEFT,v_left);
 	
 	if(nwp > 55){//intersection found
+		printf("intersection found");
+		printf("nwp1: %i \n", nwp1);
+		
 		if(nwp1 <= 2){// T-Junction, so turn left
 			set_motor(MRIGHT,initSpeed);
 			set_motor(MLEFT,-initSpeed);
