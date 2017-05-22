@@ -22,7 +22,7 @@ const int MLEFT = 2;
 const int MRIGHT = 1; 
 
 int back_track(){
-	printf("reversing");
+	printf("reversing \n");
 	set_motor(MLEFT, -initSpeed);
 	set_motor(MRIGHT, -initSpeed);
 	return 0;
@@ -36,7 +36,7 @@ int doLine(){
 	int nwp = 0; //number of white pixels detected
 	int nwp1 = 0; //number of white pixels detected
 	int threshold_var = 100; //can be adjusted
-	int derivpixel=30; //pixel difference verticaly for the deriviate calculation.
+	int derivpixel=100;//pixel difference verticaly for the deriviate calculation.
 	
 	int pSignal = 0; //proportinal signal, scaled by kP (P for Proportional in PID)
 	float kp = 0.07; //for tuning pSignal
@@ -78,14 +78,14 @@ int doLine(){
     set_motor(MLEFT,v_left);
 	
 	if(nwp > 55){//intersection found
-		printf("intersection found");
+		printf("intersection found \n");
 		printf("nwp1: %i \n", nwp1);
 		
 		if(nwp1 <= 2){// T-Junction, so turn left
 			set_motor(MRIGHT,initSpeed);
 			set_motor(MLEFT,-initSpeed);
 			sleep1(0,250000);//1/4 seconds
-			printf("juction detected");
+			printf("juction detected \n");
 		}
 		//otherwise go straight
 	}
