@@ -97,7 +97,7 @@ int doLine(){
 
 int doQ3(){
 	int pSignal = 0; //proportinal signal, scaled by kP (P for Proportional in PID)
-	float kp = 0.05; //for tuning pSignal
+	float kp = 0.07; //for tuning pSignal
 	int v_left;
 	int v_right;
 	
