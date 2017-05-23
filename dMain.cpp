@@ -41,12 +41,12 @@ void scanLine(){
 	nwp = 0; //number of white pixels detected
 	nwp1 = 0; //number of white pixels detected
 	int threshold_var = 100; //can be adjusted
-	int derivpixel=100;//pixel difference verticaly for the deriviate calculation.
+	int derivpixel=70;//pixel difference verticaly for the deriviate calculation.
 	
 	take_picture(); //take picture and store in memory
 	//first line scan
 	for(int i=0;i<test_points;i++){ 
-		pix = get_pixel(120, i*(320/test_points), 3); //save pixel color
+		pix = get_pixel(200, i*(320/test_points), 3); //save pixel color
 		if(pix>threshold_var){
 			white[i] = 1; //round color
 			nwp++;
@@ -97,7 +97,7 @@ int doLine(){
 
 int doQ3(){
 	int pSignal = 0; //proportinal signal, scaled by kP (P for Proportional in PID)
-	float kp = 0.04; //for tuning pSignal
+	float kp = 0.05; //for tuning pSignal
 	int v_left;
 	int v_right;
 	
