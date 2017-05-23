@@ -82,9 +82,9 @@ int doLine(){
     	set_motor(MLEFT,v_left);
 	
 	if(nwp > 55){//intersection found
-		set_motor(MRIGHT,40);
+		/*set_motor(MRIGHT,40);
     		set_motor(MLEFT,40);
-		sleep1(0,250000);
+		sleep1(0,250000);*/
 		mode = 1;
 	}
 	if(nwp <= 2){ // no road ahead, so backtrack
@@ -101,7 +101,7 @@ int doQ3(){
 	int v_left;
 	int v_right;
 	
-	initSpeed = 35;
+	initSpeed = 40;
 	
 	scanLine();
 	
@@ -121,19 +121,18 @@ int doQ3(){
 			set_motor(MRIGHT,-60);
 			set_motor(MLEFT,60);
 			sleep1(0,250000);
-			
+		} else {
+			v_left = initSpeed - pSignal;
+			v_right	= initSpeed + pSignal;
+			set_motor(MRIGHT,v_right);
+			set_motor(MLEFT,v_left); 
 		}
-		//otherwise go straight
-	} else if (nwp>40 && err_1>200 && nwp1>15) {
-		printf("ignoring offshoot \n");
-		set_motor(MRIGHT,-60);
-		set_motor(MLEFT,60);
-		sleep1(0,500000);
+		
 	} else if(nwp <= 2) { // no road ahead, so backtrack
 		back_track();
 		sleep1(0,050000);
 	} else { 
-		printf("doing PID \n");
+		
 		v_left = initSpeed - pSignal;
 		v_right	= initSpeed + pSignal;
 		set_motor(MRIGHT,v_right);
