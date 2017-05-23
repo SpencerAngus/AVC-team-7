@@ -34,12 +34,13 @@ int back_track(){
 
 void scanLine(){
 	char pix = 0; //holds pixel's color
+	char pix1 = 0; //holds pixel's color
 	int test_points = 64; //can be adjusted
 	char white [64]; //holds pixel's rounded color (0=black and 1=white) and location
 	err_1 = 0; //error | how offcentered the robot is (-ve for left +ve for right and 0 is centered)
 	nwp = 0; //number of white pixels detected
 	nwp1 = 0; //number of white pixels detected
-	int threshold_var = 100; //can be adjusted
+	int threshold_var = 150; //can be adjusted
 	int derivpixel=100;//pixel difference verticaly for the deriviate calculation.
 	
 	take_picture(); //take picture and store in memory
@@ -57,9 +58,9 @@ void scanLine(){
 	}
 	// second line scan
 	for(int i=0;i<test_points;i++){ 
-		pix = get_pixel(120+derivpixel, i*(320/test_points), 3); //save pixel color
+		pix1 = get_pixel(120+derivpixel, i*(320/test_points), 3); //save pixel color
 		//printf("%i ", i);
-		if(pix>threshold_var){
+		if(pix1>threshold_var){
 			nwp1++;
 		}
 	}	
