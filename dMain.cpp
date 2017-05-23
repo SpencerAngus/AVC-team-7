@@ -97,7 +97,7 @@ int doLine(){
 
 int doQ3(){
 	int pSignal = 0; //proportinal signal, scaled by kP (P for Proportional in PID)
-	float kp = 0.09; //for tuning pSignal
+	float kp = 0.08; //for tuning pSignal
 	int v_left;
 	int v_right;
 	
@@ -131,11 +131,11 @@ int doQ3(){
 	} else if(nwp <= 2) { // no road ahead, so backtrack
 		back_track();
 		sleep1(0,050000);
-	/*} else if (nwp>40 && err_1>200 && nwp1>15) {
+	} else if (nwp>40 && err_1>200 && nwp1>15) {
  		printf("ignoring offshoot \n");
  		set_motor(MRIGHT,-60);
  		set_motor(MLEFT,60);
- 		sleep1(0,500000);*/
+ 		sleep1(0,500000);
    	} else { 
 		
 		v_left = initSpeed - pSignal;
