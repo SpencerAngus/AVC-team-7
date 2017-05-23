@@ -101,7 +101,7 @@ int doQ3(){
 	int v_left;
 	int v_right;
 	
-	initSpeed = 45;
+	initSpeed = 50;
 	
 	scanLine();
 	
