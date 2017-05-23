@@ -123,7 +123,7 @@ int doQ3(){
 		}
 		//otherwise go straight
 	} else if (nwp>40 && err_1>200 && nwp1>15) {
-		printf("ignoring offshoot");
+		printf("ignoring offshoot \n");
 		set_motor(MRIGHT,-60);
 		set_motor(MLEFT,60);
 		sleep1(0,500000);
@@ -131,7 +131,7 @@ int doQ3(){
 		back_track();
 		sleep1(0,050000);
 	} else { 
-		printf("doing PID");
+		printf("doing PID \n");
 		v_left = initSpeed - pSignal;
 		v_right	= initSpeed + pSignal;
 		set_motor(MRIGHT,v_right);
