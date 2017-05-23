@@ -78,7 +78,7 @@ int doLine(){
     set_motor(MLEFT,v_left);
 	
 	if(nwp > 55){//intersection found
-		initSpeed = 35;
+		initSpeed = 40;
 		printf("intersection found \n");
 		printf("nwp1: %i \n", nwp1);
 		
