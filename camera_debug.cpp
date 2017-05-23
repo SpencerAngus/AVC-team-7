@@ -24,7 +24,7 @@ int checkPicture(){
 	int test_points = 64; //can be adjusted
 	int threshold_var = 100; //can be adjusted
 	take_picture(); //take picture and store in memory
-	printf("image: \n")
+	printf("image: \n");
 	for(int i=0;i<320;i+=320/test_points){ 
 		pix = get_pixel(120, i, 3); //save pixel color
 		//printf("%i ", i);
