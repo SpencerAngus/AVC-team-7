@@ -131,7 +131,12 @@ int doQ3(){
 	} else if(nwp <= 2) { // no road ahead, so backtrack
 		back_track();
 		sleep1(0,050000);
-	} else { 
+	} else if (nwp>40 && err_1>200 && nwp1>15) {
+ 		printf("ignoring offshoot \n");
+ 		set_motor(MRIGHT,-60);
+ 		set_motor(MLEFT,60);
+ 		sleep1(0,500000);
+   	} else { 
 		
 		v_left = initSpeed - pSignal;
 		v_right	= initSpeed + pSignal;
