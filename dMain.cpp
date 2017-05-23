@@ -87,9 +87,9 @@ int doLine(){
 			set_motor(MLEFT,0);
 			sleep1(0,100000);
 			initSpeed = 35;
-			set_motor(MRIGHT,-initSpeed);
-			set_motor(MLEFT,initSpeed);
-			sleep1(0,500000);
+			set_motor(MRIGHT,-60);
+			set_motor(MLEFT,60);
+			sleep1(0,250000);
 			
 		}
 		//otherwise go straight
