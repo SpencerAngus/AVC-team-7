@@ -40,7 +40,7 @@ void scanLine(){
 	err_1 = 0; //error | how offcentered the robot is (-ve for left +ve for right and 0 is centered)
 	nwp = 0; //number of white pixels detected
 	nwp1 = 0; //number of white pixels detected
-	int threshold_var = 70; //can be adjusted
+	int threshold_var = 100; //can be adjusted
 	int derivpixel=100;//pixel difference verticaly for the deriviate calculation.
 	
 	take_picture(); //take picture and store in memory
@@ -82,8 +82,9 @@ int doLine(){
     	set_motor(MLEFT,v_left);
 	
 	if(nwp > 55){//intersection found
-		set_motor(MRIGHT,0);
-    		set_motor(MLEFT,0);
+		set_motor(MRIGHT,40);
+    		set_motor(MLEFT,40);
+		sleep1(0,250000);
 		mode = 1;
 	}
 	if(nwp <= 2){ // no road ahead, so backtrack
