@@ -25,10 +25,6 @@ int doGate() {
 	return 0;
 }
 
-
-const int MLEFT = 2;
-const int MRIGHT = 1; 
-
 int back_track(){
 	printf("reversing \n");
 	set_motor(MLEFT, -initSpeed);
@@ -36,7 +32,7 @@ int back_track(){
 	return 0;
 }
 
-int scanLine(){
+void scanLine(){
 	char pix = 0; //holds pixel's color
 	int test_points = 64; //can be adjusted
 	char white [64]; //holds pixel's rounded color (0=black and 1=white) and location
@@ -137,7 +133,7 @@ int doQ3(){
 	frameRate = 5;
 	printf("nwp: %i \n", nwp);
 	printf("nwp1: %i \n", nwp1);
-	printf("err_1: %i \n", err_1);
+	printf("err_1: %f \n", err_1);
 	
 	return 0;
 }
