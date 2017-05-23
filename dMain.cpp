@@ -58,7 +58,7 @@ void scanLine(){
 	}
 	// second line scan
 	for(int i=0;i<test_points;i++){ 
-		pix1 = get_pixel(120+derivpixel, i*(320/test_points), 3); //save pixel color
+		pix1 = get_pixel(120-derivpixel, i*(320/test_points), 3); //save pixel color
 		//printf("%i ", i);
 		if(pix1>threshold_var){
 			nwp1++;
