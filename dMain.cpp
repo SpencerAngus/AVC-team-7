@@ -82,13 +82,15 @@ int doLine(){
 		printf("nwp1: %i \n", nwp1);
 		
 		if(nwp1 <= 2){// T-Junction, so turn left
-			stop(0);
+			printf("juction detected \n");
+			set_motor(MRIGHT,0);
+			set_motor(MLEFT,0);
 			sleep1(0,100000);
 			initSpeed = 35;
 			set_motor(MRIGHT,-initSpeed);
 			set_motor(MLEFT,initSpeed);
 			sleep1(0,250000);//1/4 seconds
-			printf("juction detected \n");
+			
 		}
 		//otherwise go straight
 	}
