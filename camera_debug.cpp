@@ -47,14 +47,11 @@ int checkPicture(){
 		pix = get_pixel(20, i, 3); //save pixel color
 		//printf("%i ", i);
 		if(pix>threshold_var){
-			white[counter] = 1; //round color
 			printf("1");
 		}
 		else{
-			white[counter] = 0; //round color
 			printf("0");
 		}
-		counter++;
 	}
 	
 	printf("\n");
