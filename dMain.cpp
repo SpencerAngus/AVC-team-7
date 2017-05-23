@@ -78,11 +78,13 @@ int doLine(){
     set_motor(MLEFT,v_left);
 	
 	if(nwp > 55){//intersection found
-		initSpeed = 40;
 		printf("intersection found \n");
 		printf("nwp1: %i \n", nwp1);
 		
 		if(nwp1 <= 2){// T-Junction, so turn left
+			stop(0);
+			sleep1(0,100000);
+			initSpeed = 35;
 			set_motor(MRIGHT,-initSpeed);
 			set_motor(MLEFT,initSpeed);
 			sleep1(0,250000);//1/4 seconds
