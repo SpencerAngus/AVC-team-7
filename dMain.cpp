@@ -122,27 +122,26 @@ int doQ3(){
 			
 		}
 		//otherwise go straight
-	}
-	else if(nwp>40 && err_1>200 && nwp1>15){
+	} else if (nwp>40 && err_1>200 && nwp1>15) {
+		printf("ignoring offshoot");
 		set_motor(MRIGHT,-60);
 		set_motor(MLEFT,60);
 		sleep1(0,500000);
-	}
-	else if(nwp <= 2){ // no road ahead, so backtrack
+	} else if(nwp <= 2) { // no road ahead, so backtrack
 		back_track();
 		sleep1(0,050000);
-	}
-	else{
-	v_left = initSpeed - pSignal;
-	v_right	= initSpeed + pSignal;
-	set_motor(MRIGHT,v_right);
-    	set_motor(MLEFT,v_left); 
+	} else { 
+		printf("doing PID");
+		v _left = initSpeed - pSignal;
+		v_right	= initSpeed + pSignal;
+		set_motor(MRIGHT,v_right);
+    		set_motor(MLEFT,v_left); 
 	}
 	
 	//frameRate = 5;
-	printf("nwp: %i \n", nwp);
+	/*printf("nwp: %i \n", nwp);
 	printf("nwp1: %i \n", nwp1);
-	printf("err_1: %f \n", err_1);
+	printf("err_1: %f \n", err_1);*/
 	
 	return 0;
 }
