@@ -130,7 +130,7 @@ int doQ3(){
 		
 	} else if(nwp <= 2) { // no road ahead, so backtrack
 		back_track();
-		sleep1(0,050000);
+		sleep1(0,100000);
 	}  else { 
 		
 		v_left = initSpeed - pSignal;
@@ -139,9 +139,8 @@ int doQ3(){
     		set_motor(MLEFT,v_left); 
 	}
 	
-	if (get_pixel(120, 160, 1) > 200){
-		mode = 2;
-	}
+	char red = get_pixel(120, 160, 1);
+	printf("red %c \n",red);
 	//frameRate = 5;
 	/*printf("nwp: %i \n", nwp);
 	printf("nwp1: %i \n", nwp1);
