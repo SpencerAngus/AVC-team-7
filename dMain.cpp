@@ -139,12 +139,21 @@ int doQ3(){
     		set_motor(MLEFT,v_left); 
 	}
 	
+	if (get_pixel(120, 160, 1) > 200){
+		mode = 2;
+	}
 	//frameRate = 5;
 	/*printf("nwp: %i \n", nwp);
 	printf("nwp1: %i \n", nwp1);
 	printf("err_1: %f \n", err_1);*/
 	
 	return 0;
+}
+
+void doMaze(){
+	printf("red");
+	//set_motor(MLEFT, 60);	
+	//set_motor(MRIGHT, 60);
 }
 
 int main (){
@@ -157,6 +166,10 @@ int main (){
 		sleep1(0,1000000/frameRate); //|testing| adjust this to adjust framerate
 	}
 	while(mode == 1){ //infinite loop
+		doQ3(); //executes line following method
+		sleep1(0,1000000/frameRate); //|testing| adjust this to adjust framerate
+	}
+	while(mode == 2){ //infinite loop
 		doQ3(); //executes line following method
 		sleep1(0,1000000/frameRate); //|testing| adjust this to adjust framerate
 	}
