@@ -176,7 +176,8 @@ int doQ3(){
 }
 
 void doMaze(){
-	
+	set_motor(MRIGHT, 0);
+	set_motor(MLEFT, 0);
 	int front = read_analog(SLEFT);
 	int right = read_analog(SRIGHT);
 	int left = read_analog(SRIGHT);
