@@ -183,16 +183,16 @@ void doMaze(){
 	
 	float err;
 	
-	int front = read_analog(SFRONT);
-	int right = read_analog(SRIGHT);
-	int left = read_analog(SLEFT);
+	float front = read_analog(SFRONT);
+	float right = read_analog(SRIGHT);
+	float left = read_analog(SLEFT);
 	
 	printf("%d		%d		%d \n", left, front, right);
 	
 	err = (float)(left - right);
 	printf("error: %d \n", err);
 	
-	pSignal = (int)(err*kp);
+	pSignal = (err*kp);
 	
 	printf("pSignal: %d \n", pSignal);
 	
