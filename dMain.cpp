@@ -180,7 +180,7 @@ void doMaze(){
 	set_motor(MRIGHT, 0);
 	set_motor(MLEFT, 0);
 	
-	double err = 0;
+	int err = 1;
 	float kp = 0.1;
 	float pSignal = 0;
 	
