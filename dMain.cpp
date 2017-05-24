@@ -158,8 +158,8 @@ int doQ3(){
 		sleep1(0,100000);
 	}  else { 
 		
-		v_left = initSpeed - pSignal;
-		v_right	= initSpeed + pSignal;
+		v_left = initSpeed + pSignal;
+		v_right	= initSpeed - pSignal;
 		set_motor(MRIGHT,v_right);
     		set_motor(MLEFT,v_left); 
 	}
