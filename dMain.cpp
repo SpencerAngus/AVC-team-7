@@ -192,9 +192,9 @@ void doMaze(){
 	printf("%d		%d		%d \n", left, front, right);
 	
 	errInt = (left - right);
-	printf("errorInt: %i \n", errInt);
+	printf("errorInt: %d \n", errInt);
 	err = (double)(errInt);
-	printf("error: %d \n", err);
+	printf("error: %f \n", err);
 	
 	pSignal = (err*kp);
 	
