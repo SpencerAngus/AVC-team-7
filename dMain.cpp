@@ -66,7 +66,7 @@ void scanLine(){
 	}	
 }
 
-boolean checkRed(){
+bool checkRed(){
 	int rgb[3] = {0,0,0};
 	for(int i = 0; i <3; i++){
 		char r = get_pixel(120, 150+10*i, 0);
@@ -80,7 +80,7 @@ boolean checkRed(){
 	rgb[1] = rgb[1]/3;
 	rgb[2] = rgb[2]/3;
 	printf("RGB: %d, %d, %d \n", rgb[0],rgb[1],rgb[2]);
-	return false;
+	return 0;
 }
 
 int doLine(){
