@@ -191,14 +191,12 @@ void doMaze(){
 	
 	printf("%d		%d		%d \n", left, front, right);
 	
-	errInt = (left - right);
-	printf("errorInt: %d \n", errInt);
-	err = (double)(errInt);
+	err = (double)(left - right);
 	printf("error: %f \n", err);
 	
 	pSignal = (err*kp);
 	
-	printf("pSignal: %d \n", pSignal);
+	printf("pSignal: %f \n", pSignal);
 	
 	set_motor(MRIGHT, 0);
 	set_motor(MLEFT, 0);
