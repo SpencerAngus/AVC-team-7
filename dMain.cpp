@@ -178,10 +178,17 @@ int doQ3(){
 void doMaze(){
 	set_motor(MRIGHT, 0);
 	set_motor(MLEFT, 0);
+	
+	double err;
+	
 	int front = read_analog(SFRONT);
 	int right = read_analog(SRIGHT);
 	int left = read_analog(SLEFT);
+	
 	printf("%d		%d		%d \n", left, front, right);
+	
+	err = left - front;
+	printf("error: %d", err);
 }
 
 int main (){
