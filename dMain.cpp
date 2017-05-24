@@ -181,7 +181,7 @@ void doMaze(){
 	set_motor(MRIGHT, 0);
 	set_motor(MLEFT, 0);
 	
-	float err;
+	int err;
 	
 	int front = read_analog(SFRONT);
 	int right = read_analog(SRIGHT);
