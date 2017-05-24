@@ -138,9 +138,13 @@ int doQ3(){
 		set_motor(MRIGHT,v_right);
     		set_motor(MLEFT,v_left); 
 	}
-	
-	
-	if (get_pixel(120, 160, 0)>200){
+	int totred = 0;
+	for(int i = 0; i <3; i++){
+		char red = get_pixel(120, 150+10*i, 0);
+		totred += red;
+	}
+	totred = totred/3;
+	if (totred>220){
 		printf("red detected");
 		mode = 2;
 	}
@@ -154,8 +158,8 @@ int doQ3(){
 
 void doMaze(){
 	printf("maze");
-	//set_motor(MLEFT, 60);	
-	//set_motor(MRIGHT, 60);
+	set_motor(MLEFT, 0);	
+	set_motor(MRIGHT, 0);
 }
 
 int main (){
