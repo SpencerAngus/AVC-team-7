@@ -181,7 +181,7 @@ void doMaze(){
 	set_motor(MRIGHT, 0);
 	set_motor(MLEFT, 0);
 	
-	int err;
+	float err;
 	
 	int front = read_analog(SFRONT);
 	int right = read_analog(SRIGHT);
@@ -189,10 +189,10 @@ void doMaze(){
 	
 	printf("%d		%d		%d \n", left, front, right);
 	
-	err = (left - right);
+	err = (float)(left - right);
 	printf("error: %d \n", err);
 	
-	pSignal = (err*kp);
+	pSignal = (int)(err*kp);
 	
 	printf("pSignal: %d \n", pSignal);
 	
