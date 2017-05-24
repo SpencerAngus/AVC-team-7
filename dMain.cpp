@@ -177,13 +177,10 @@ int doQ3(){
 
 void doMaze(){
 	
-	set_motor(MRIGHT, 0);
-	set_motor(MLEFT, 0);
-	
 	int errInt = 1;
 	double err;
-	float kp = 0.1;
-	float pSignal = 0;
+	double kp = 0.1;
+	int pSignal = 0;
 	
 	int front = read_analog(SFRONT);
 	int right = read_analog(SRIGHT);
@@ -194,12 +191,12 @@ void doMaze(){
 	err = (double)(left - right);
 	printf("error: %f \n", err);
 	
-	pSignal = (err*kp);
+	pSignal = (int)(err*kp);
 	
 	printf("pSignal: %f \n", pSignal);
 	
-	set_motor(MRIGHT, 0);
-	set_motor(MLEFT, 0);
+	set_motor(MRIGHT, initSpeed - pSignal);
+	set_motor(MLEFT, initSpeed + pSignal);
 }
 
 int main (){
