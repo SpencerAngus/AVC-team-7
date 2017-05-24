@@ -66,6 +66,23 @@ void scanLine(){
 	}	
 }
 
+boolean checkRed(){
+	int rgb[3] = {0,0,0};
+	for(int i = 0; i <3; i++){
+		char r = get_pixel(120, 150+10*i, 0);
+		char b = get_pixel(120, 150+10*i, 1);
+		char g = get_pixel(120, 150+10*i, 2);
+		rgb[0] += r;
+		rgb[1] += g;
+		rgb[2] += b;
+	}
+	rgb[0] = rgb[0]/3;
+	rgb[1] = rgb[1]/3;
+	rgb[2] = rgb[2]/3;
+	printf("RGB: %d, %d, %d \n", rgb[0],rgb[1],rgb[2]);
+	return false;
+}
+
 int doLine(){
 	int pSignal = 0; //proportinal signal, scaled by kP (P for Proportional in PID)
 	float kp = 0.07; //for tuning pSignal
@@ -138,16 +155,8 @@ int doQ3(){
 		set_motor(MRIGHT,v_right);
     		set_motor(MLEFT,v_left); 
 	}
-	int totred = 0;
-	for(int i = 0; i <3; i++){
-		char red = get_pixel(120, 150+10*i, 0);
-		totred += red;
-	}
-	totred = totred/3;
-	if (totred>220){
-		printf("red detected");
-		mode = 2;
-	}
+	
+	checkRed();
 	//frameRate = 5;
 	/*printf("nwp: %i \n", nwp);
 	printf("nwp1: %i \n", nwp1);
