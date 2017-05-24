@@ -179,7 +179,7 @@ void doMaze(){
 	initSpeed = 40;
 	int errInt = 1;
 	double err;
-	double kp = 0.2;
+	double kp = 0.05;
 	int pSignal = 0;
 	
 	int front = read_analog(SFRONT);
