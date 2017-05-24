@@ -140,7 +140,7 @@ int doQ3(){
 	}
 	
 	char red = get_pixel(120, 160, 1);
-	printf("red %c \n",red);
+	printf("red %f \n",red);
 	//frameRate = 5;
 	/*printf("nwp: %i \n", nwp);
 	printf("nwp1: %i \n", nwp1);
