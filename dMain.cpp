@@ -180,7 +180,8 @@ void doMaze(){
 	set_motor(MRIGHT, 0);
 	set_motor(MLEFT, 0);
 	
-	int err = 1;
+	int errInt = 1;
+	double err;
 	float kp = 0.1;
 	float pSignal = 0;
 	
@@ -190,7 +191,8 @@ void doMaze(){
 	
 	printf("%d		%d		%d \n", left, front, right);
 	
-	err = (left - right);
+	errInt = (left - right);
+	err = errInt;
 	printf("error: %d \n", err);
 	
 	pSignal = (err*kp);
