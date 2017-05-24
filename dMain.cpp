@@ -183,9 +183,9 @@ void doMaze(){
 	
 	float err;
 	
-	float front = read_analog(SFRONT);
-	float right = read_analog(SRIGHT);
-	float left = read_analog(SLEFT);
+	int front = read_analog(SFRONT);
+	int right = read_analog(SRIGHT);
+	int left = read_analog(SLEFT);
 	
 	printf("%d		%d		%d \n", left, front, right);
 	
