@@ -3,14 +3,18 @@
 
 int frameRate = 80;
 int initSpeed = 50;
-int mode = 0;
+int mode = 2;
 
 float err_1 = 0; //error | how offcentered the robot is (-ve for left +ve for right and 0 is centered)
 int nwp = 0; //number of white pixels detected
 int nwp1 = 0; //number of white pixels detected
 
 const int MLEFT = 2;
-const int MRIGHT = 1; 
+const int MRIGHT = 1;
+
+const int SFRONT = 0;
+const int SLEFT = 1;
+const int SRIGHT = 2;
 
 int doGate() {
 	char server_ip[] = "130.195.6.196";
@@ -173,8 +177,10 @@ int doQ3(){
 
 void doMaze(){
 	
-	set_motor(MLEFT, 100);	
-	set_motor(MRIGHT, 100);
+	int front = read_analog(SLEFT);
+	int right = read_analog(SRIGHT;
+	int left = read_analog(SRIGHT);
+	printf("%d		%d		%d \n", left. front, right);
 }
 
 int main (){
