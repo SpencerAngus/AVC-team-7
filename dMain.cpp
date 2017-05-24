@@ -195,8 +195,8 @@ void doMaze(){
 	
 	printf("pSignal: %f \n", pSignal);
 	
-	set_motor(MRIGHT, initSpeed - pSignal);
-	set_motor(MLEFT, initSpeed + pSignal);
+	set_motor(MRIGHT, initSpeed + pSignal);
+	set_motor(MLEFT, initSpeed - pSignal);
 }
 
 int main (){
