@@ -139,7 +139,11 @@ int doQ3(){
     		set_motor(MLEFT,v_left); 
 	}
 	
-	char red = get_pixel(120, 160, 1);
+	/*int totred;
+	for (int i = 0; i < 3; i++){
+		char red = get_pixel(120, 150+10*i, 0)
+	}*/
+	char red = get_pixel(120, 160, 0);
 	printf("red %f \n",red);
 	//frameRate = 5;
 	/*printf("nwp: %i \n", nwp);
