@@ -172,9 +172,9 @@ int doQ3(){
 }
 
 void doMaze(){
-	printf("maze \n");
-	set_motor(MLEFT, 0);	
-	set_motor(MRIGHT, 0);
+	
+	set_motor(MLEFT, 100);	
+	set_motor(MRIGHT, 100);
 }
 
 int main (){
@@ -190,6 +190,7 @@ int main (){
 		doQ3(); //executes line following method
 		sleep1(0,1000000/frameRate); //|testing| adjust this to adjust framerate
 	}
+	printf("maze \n");
 	while(mode == 2){ //infinite loop
 		doMaze(); //executes line following method
 		sleep1(0,1000000/frameRate); //|testing| adjust this to adjust framerate
