@@ -79,8 +79,12 @@ bool checkRed(){
 	rgb[0] = rgb[0]/3;
 	rgb[1] = rgb[1]/3;
 	rgb[2] = rgb[2]/3;
-	printf("RGB: %d, %d, %d \n", rgb[0],rgb[1],rgb[2]);
-	return 0;
+	//printf("RGB: %d, %d, %d \n", rgb[0],rgb[1],rgb[2]);
+	if(rgb[0] > 200 && rgb[1] < 100 && rgb[2] < 100){
+		return 1;
+	} else {
+		return 0;
+	}
 }
 
 int doLine(){
@@ -156,7 +160,9 @@ int doQ3(){
     		set_motor(MLEFT,v_left); 
 	}
 	
-	checkRed();
+	if(checkRed()){
+		mode = 2;
+	}
 	//frameRate = 5;
 	/*printf("nwp: %i \n", nwp);
 	printf("nwp1: %i \n", nwp1);
@@ -166,7 +172,7 @@ int doQ3(){
 }
 
 void doMaze(){
-	printf("maze");
+	printf("maze \n");
 	set_motor(MLEFT, 0);	
 	set_motor(MRIGHT, 0);
 }
