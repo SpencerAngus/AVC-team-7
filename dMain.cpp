@@ -176,7 +176,7 @@ int doQ3(){
 }
 
 void doMaze(){
-	float kp = 0.01;
+	float kp = 0.1;
 	float pSignal;
 	set_motor(MRIGHT, 0);
 	set_motor(MLEFT, 0);
