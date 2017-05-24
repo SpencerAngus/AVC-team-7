@@ -7,5 +7,7 @@
 int main(){
 	//This sets up the RPi hardware and ensures everything is working correctly
 	init();
-	set_PWM(7,150);
+	while(true){
+		set_PWM(7,150);
+	}
 }
