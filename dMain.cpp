@@ -188,7 +188,7 @@ void doMaze(){
 	printf("%d		%d		%d \n", left, front, right);
 	
 	err = left - front;
-	printf("error: %d", err);
+	printf("error: %d \n", err);
 }
 
 int main (){
