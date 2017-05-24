@@ -180,7 +180,7 @@ void doMaze(){
 	int front = read_analog(SLEFT);
 	int right = read_analog(SRIGHT);
 	int left = read_analog(SRIGHT);
-	printf("%d		%d		%d \n", left. front, right);
+	printf("%d		%d		%d \n", left, front, right);
 }
 
 int main (){
