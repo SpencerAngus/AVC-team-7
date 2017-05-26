@@ -212,7 +212,7 @@ int main (){
 	printf("maze \n");
 	while(mode == 2){ //infinite loop
 		doMaze(); //executes line following method
-		sleep1(0,1000000/frameRate); //|testing| adjust this to adjust framerate
+		sleep1(0,0); //|testing| adjust this to adjust framerate
 	}
 	return 0;
 }
