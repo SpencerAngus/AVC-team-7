@@ -3,7 +3,7 @@
 
 int frameRate = 80;
 int initSpeed = 50;
-int mode = 1;
+int mode = 0;
 
 float err_1 = 0; //error | how offcentered the robot is (-ve for left +ve for right and 0 is centered)
 int nwp = 0; //number of white pixels detected
