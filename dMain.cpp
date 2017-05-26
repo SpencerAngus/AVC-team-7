@@ -164,9 +164,9 @@ int doQ3(){
     		set_motor(MLEFT,v_left); 
 	}
 	
-	/*if(checkRed()){
+	if(checkRed()){
 		mode = 2;
-	} */
+	} 
 	//frameRate = 5;
 	/*printf("nwp: %i \n", nwp);
 	printf("nwp1: %i \n", nwp1);
