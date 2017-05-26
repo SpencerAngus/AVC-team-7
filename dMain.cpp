@@ -144,7 +144,7 @@ int doQ3(){
 			set_motor(MRIGHT,0);
 			set_motor(MLEFT,0);
 			sleep1(0,100000);
-			initSpeed = 40;
+			
 			set_motor(MRIGHT,-60);
 			set_motor(MLEFT,60);
 			sleep1(0,250000);
@@ -200,7 +200,7 @@ void doMaze(){
 	set_motor(MRIGHT, initSpeed + mSignal);
 	set_motor(MLEFT, initSpeed - mSignal);
 	
-	if (front > 300){
+	if (front > 200){
 		printf("Wall");	
 	}
 	prevErr = err;
