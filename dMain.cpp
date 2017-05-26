@@ -2,7 +2,7 @@
 #include "E101.h"
 
 int frameRate = 80;
-int initSpeed = 60;
+int initSpeed = 50;
 int mode = 0;
 
 float err_1 = 0; //error | how offcentered the robot is (-ve for left +ve for right and 0 is centered)
@@ -126,7 +126,7 @@ int doQ3(){
 	int v_left;
 	int v_right;
 	
-	initSpeed = 60;
+	//initSpeed = 60;
 	
 	scanLine();
 	
