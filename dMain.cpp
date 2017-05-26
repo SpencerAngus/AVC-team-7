@@ -8,6 +8,7 @@ int mode = 0;
 float err_1 = 0; //error | how offcentered the robot is (-ve for left +ve for right and 0 is centered)
 int nwp = 0; //number of white pixels detected
 int nwp1 = 0; //number of white pixels detected
+int junctions = 0;
 
 float prevErr = 0; //used for dTerm of maze code
 
@@ -141,6 +142,7 @@ int doQ3(){
 		
 		if(nwp1 <= 2){// T-Junction, so turn left
 			printf("juction detected \n");
+			junction++;
 			set_motor(MRIGHT,0);
 			set_motor(MLEFT,0);
 			sleep1(0,100000);
@@ -164,6 +166,10 @@ int doQ3(){
 		v_right	= initSpeed + pSignal;
 		set_motor(MRIGHT,v_right);
     		set_motor(MLEFT,v_left); 
+	}
+	
+	if(junction > 1){
+		initSpeed = 40;
 	}
 	
 	if(checkRed()){
