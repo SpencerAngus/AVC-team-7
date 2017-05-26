@@ -9,6 +9,8 @@ float err_1 = 0; //error | how offcentered the robot is (-ve for left +ve for ri
 int nwp = 0; //number of white pixels detected
 int nwp1 = 0; //number of white pixels detected
 
+float prevErr; //used for dTerm of maze code
+
 const int MLEFT = 2;
 const int MRIGHT = 1;
 
@@ -179,7 +181,7 @@ void doMaze(){
 	initSpeed = 40;
 	int errInt = 1;
 	double err;
-	double kp = 0.05;
+	double kp = 0.07;
 	int pSignal = 0;
 	
 	int front = read_analog(SFRONT);
