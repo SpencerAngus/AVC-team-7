@@ -195,10 +195,14 @@ void doMaze(){
 	pSignal = (int)(err*kp);
 	dSignal = (int)((err-prevErr)/0.02)*kd;
 	mSignal = pSignal + dSignal;
-	printf("dSignal: %d \n", dSignal);
+	//printf("dSignal: %d \n", dSignal);
 	
 	set_motor(MRIGHT, initSpeed + mSignal);
 	set_motor(MLEFT, initSpeed - mSignal);
+	
+	if (front > 400){
+		printf("Wall");	
+	}
 	prevErr = err;
 }
 
