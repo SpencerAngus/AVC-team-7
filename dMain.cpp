@@ -3,7 +3,7 @@
 
 int frameRate = 80;
 int initSpeed = 50;
-int mode = 2;
+int mode = 1;
 
 float err_1 = 0; //error | how offcentered the robot is (-ve for left +ve for right and 0 is centered)
 int nwp = 0; //number of white pixels detected
@@ -157,7 +157,7 @@ int doQ3(){
 		
 	} else if(nwp <= 2) { // no road ahead, so backtrack
 		back_track();
-		sleep1(0,100000);
+		sleep1(0,150000);
 	}  else { 
 		
 		v_left = initSpeed - pSignal;
