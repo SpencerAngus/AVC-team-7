@@ -190,10 +190,12 @@ void doMaze(){
 	
 	err = (double)(left - right);	
 	pSignal = (int)(err*kp);
-	
+	dSignal = (int)((err-prevErr)/0.02);
+	printf("dSignal: %d", dSignal);
 	
 	set_motor(MRIGHT, initSpeed + pSignal);
 	set_motor(MLEFT, initSpeed - pSignal);
+	prevErr = err;
 }
 
 int main (){
@@ -212,7 +214,7 @@ int main (){
 	printf("maze \n");
 	while(mode == 2){ //infinite loop
 		doMaze(); //executes line following method
-		sleep1(0,0); //|testing| adjust this to adjust framerate
+		sleep1(0,20000); //|testing| adjust this to adjust framerate
 	}
 	return 0;
 }
