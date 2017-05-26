@@ -182,6 +182,7 @@ void doMaze(){
 	int errInt = 1;
 	double err;
 	double kp = 0.07;
+	double kd = 0.01;
 	int pSignal = 0;
 	int dSignal = 0;
 	
@@ -191,7 +192,7 @@ void doMaze(){
 	
 	err = (double)(left - right);	
 	pSignal = (int)(err*kp);
-	dSignal = (int)((err-prevErr)/0.02);
+	dSignal = (int)((err-prevErr)/0.02)*kd;
 	printf("dSignal: %d \n", dSignal);
 	
 	set_motor(MRIGHT, initSpeed + pSignal);
