@@ -3,7 +3,7 @@
 
 int frameRate = 80;
 int initSpeed = 50;
-int mode = 1;
+int mode = 2;
 
 float err_1 = 0; //error | how offcentered the robot is (-ve for left +ve for right and 0 is centered)
 int nwp = 0; //number of white pixels detected
@@ -185,6 +185,7 @@ void doMaze(){
 	double kd = 0.01;
 	int pSignal = 0;
 	int dSignal = 0;
+	int mSignal = 0;
 	
 	int front = read_analog(SFRONT);
 	int right = read_analog(SRIGHT);
@@ -193,10 +194,11 @@ void doMaze(){
 	err = (double)(left - right);	
 	pSignal = (int)(err*kp);
 	dSignal = (int)((err-prevErr)/0.02)*kd;
+	mSignal = pSignal - dSignal;
 	printf("dSignal: %d \n", dSignal);
 	
-	set_motor(MRIGHT, initSpeed + pSignal);
-	set_motor(MLEFT, initSpeed - pSignal);
+	set_motor(MRIGHT, initSpeed + mSignal);
+	set_motor(MLEFT, initSpeed - mSignal);
 	prevErr = err;
 }
 
