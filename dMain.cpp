@@ -142,7 +142,7 @@ int doQ3(){
 		
 		if(nwp1 <= 2){// T-Junction, so turn left
 			printf("juction detected \n");
-			junction++;
+			junctions++;
 			set_motor(MRIGHT,0);
 			set_motor(MLEFT,0);
 			sleep1(0,100000);
@@ -168,7 +168,7 @@ int doQ3(){
     		set_motor(MLEFT,v_left); 
 	}
 	
-	if(junction > 1){
+	if(junctions > 1){
 		initSpeed = 40;
 	}
 	
