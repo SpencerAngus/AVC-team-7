@@ -107,9 +107,9 @@ int doLine(){
     	set_motor(MLEFT,v_left);
 	
 	if(nwp > 55){//intersection found
-		/*set_motor(MRIGHT,40);
-    		set_motor(MLEFT,40);
-		sleep1(0,250000);*/
+		set_motor(MRIGHT,50);
+    		set_motor(MLEFT,50);
+		sleep1(0,250000);
 		mode = 1;
 	}
 	if(nwp <= 2){ // no road ahead, so backtrack
