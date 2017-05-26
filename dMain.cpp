@@ -144,7 +144,7 @@ int doQ3(){
 			set_motor(MRIGHT,0);
 			set_motor(MLEFT,0);
 			sleep1(0,100000);
-			initSpeed = 35;
+			initSpeed = 40;
 			set_motor(MRIGHT,-60);
 			set_motor(MLEFT,60);
 			sleep1(0,250000);
@@ -192,7 +192,7 @@ void doMaze(){
 	err = (double)(left - right);	
 	pSignal = (int)(err*kp);
 	dSignal = (int)((err-prevErr)/0.02);
-	printf("dSignal: %d", dSignal);
+	printf("dSignal: %d \n", dSignal);
 	
 	set_motor(MRIGHT, initSpeed + pSignal);
 	set_motor(MLEFT, initSpeed - pSignal);
