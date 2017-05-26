@@ -109,7 +109,7 @@ int doLine(){
 	if(nwp > 55){//intersection found
 		set_motor(MRIGHT,50);
     		set_motor(MLEFT,50);
-		sleep1(0,250000);
+		sleep1(0,500000);
 		mode = 1;
 	}
 	if(nwp <= 2){ // no road ahead, so backtrack
@@ -164,9 +164,9 @@ int doQ3(){
     		set_motor(MLEFT,v_left); 
 	}
 	
-	if(checkRed()){
+	/*if(checkRed()){
 		mode = 2;
-	}
+	} */
 	//frameRate = 5;
 	/*printf("nwp: %i \n", nwp);
 	printf("nwp1: %i \n", nwp1);
