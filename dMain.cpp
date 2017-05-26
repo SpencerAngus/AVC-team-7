@@ -47,7 +47,7 @@ void scanLine(){
 	nwp = 0; //number of white pixels detected
 	nwp1 = 0; //number of white pixels detected
 	int threshold_var = 100; //can be adjusted
-	int derivpixel=70;//pixel difference verticaly for the deriviate calculation.
+	int derivpixel=100;//pixel difference verticaly for the deriviate calculation.
 	
 	take_picture(); //take picture and store in memory
 	//first line scan
@@ -200,8 +200,10 @@ void doMaze(){
 	set_motor(MRIGHT, initSpeed + mSignal);
 	set_motor(MLEFT, initSpeed - mSignal);
 	
-	if (front > 200){
-		printf("Wall");	
+	if (front > 150){
+		printf("Wall \n");	
+		back_track();
+		sleep1(0,100000);
 	}
 	prevErr = err;
 }
