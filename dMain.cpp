@@ -206,7 +206,7 @@ void doMaze(){
 	set_motor(MRIGHT, initSpeed + mSignal);
 	set_motor(MLEFT, initSpeed - mSignal);
 	
-	if (front > 150){
+	if (front > 250){
 		printf("Wall \n");	
 		back_track();
 		sleep1(0,100000);
