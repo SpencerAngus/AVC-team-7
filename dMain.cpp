@@ -48,7 +48,7 @@ void scanLine(){
 	nwp = 0; //number of white pixels detected
 	nwp1 = 0; //number of white pixels detected
 	int threshold_var = 100; //can be adjusted
-	int derivpixel=100;//pixel difference verticaly for the deriviate calculation.
+	int derivpixel=180;//pixel difference verticaly for the deriviate calculation.
 	
 	take_picture(); //take picture and store in memory
 	//first line scan
@@ -65,7 +65,7 @@ void scanLine(){
 	}
 	// second line scan
 	for(int i=0;i<test_points;i++){ 
-		pix1 = get_pixel(120-derivpixel, i*(320/test_points), 3); //save pixel color
+		pix1 = get_pixel(200-derivpixel, i*(320/test_points), 3); //save pixel color
 		//printf("%i ", i);
 		if(pix1>threshold_var){
 			nwp1++;
